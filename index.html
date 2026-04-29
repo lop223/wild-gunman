@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>lab_7</title>
+  </head>
+  <body>
+    <div class="ui-panel">
+      <div class="time-block">
+        <div class="ui-block">
+          <div class="label">ENEMY</div>
+          <div id="enemy-time">0.00</div>
+        </div>
+        <div class="ui-block">
+          <div class="label">YOU</div>
+          <div id="player-time">0.00</div>
+        </div>
+      </div>
+      <div class="data-block">
+        <div class="score-block">
+          <div id="score">000000</div>
+          <div class="label label--score">SCORE</div>
+        </div>
+        <div class="stats-block">
+          <div class="stats-row">
+            <img src="/src/assets/textures/ui/win.png" class="win" />
+            <div id="win">0</div>
+          </div>
+          <div class="stats-row">
+            <img src="/src/assets/textures/ui/hp.png" class="hp" />
+            <div id="hp">3</div>
+          </div>
+        </div>
+      </div>
+      <div class="reward-block">
+        <div class="reward-row">
+          <img src="/src/assets/textures/ui/coin.png" class="coin" />
+          <div id="coin">2800</div>
+        </div>
+        <div class="label label--reward">REWARD</div>
+      </div>
+    </div>
+    <div class="game">
+      <img id="bg" src="/src/assets/textures/bg/bg.png" class="bg" />
+      <div id="message-box">
+        <img
+          id="message"
+          class="hidden"
+          src="/src/assets/textures/message/foul.png"
+          alt="message"
+        />
+      </div>
+      <div class="bonus hidden">
+        <img src="/src/assets/textures/message/bonus.png" alt="bonus">
+        <div id="bonus">0</div>
+      </div>
+      <div id="enemy" class="enemy"></div>
+      <div id="hat" class="hidden"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
