@@ -44,7 +44,7 @@ body {
 
 @font-face {
   font-family: "Pixel";
-  src: url("assets/fonts/PixeloidSans-Bold.ttf") format("truetype");
+  src: url("/assets/fonts/PixeloidSans-Bold.ttf") format("truetype");
 }
 
 .ui-panel {
