@@ -227,15 +227,15 @@ function formatLive(time) {
 function showMessage(flag) {
 	switch (flag) {
 		case "foul": {
-			messageContent = "/assets/textures/message/foul.png";
+			messageContent = "assets/textures/message/foul.png";
 			break;
 		}
 		case "lose": {
-			messageContent = "/assets/textures/message/death.png";
+			messageContent = "assets/textures/message/death.png";
 			break;
 		}
 		default: {
-			messageContent = "/assets/textures/message/win.png";
+			messageContent = "assets/textures/message/win.png";
 			break;
 		}
 	}
@@ -673,8 +673,8 @@ function gameLoop(time) {
 			flashTick = 0;
 			flashIsRed = !flashIsRed;
 			bgEl.src = flashIsRed
-				? "/assets/textures/bg/bg_death.png"
-				: "/assets/textures/bg/bg.png";
+				? "assets/textures/bg/bg_death.png"
+				: "assets/textures/bg/bg.png";
 		}
 
 		if (flashTimer <= 0) {
