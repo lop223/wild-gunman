@@ -673,8 +673,8 @@ function gameLoop(time) {
 			flashTick = 0;
 			flashIsRed = !flashIsRed;
 			bgEl.src = flashIsRed
-				? "/src/assets/textures/bg/bg_death.png"
-				: "/src/assets/textures/bg/bg.png";
+				? "/assets/textures/bg/bg_death.png"
+				: "/assets/textures/bg/bg.png";
 		}
 
 		if (flashTimer <= 0) {
