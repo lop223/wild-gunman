@@ -1,4 +1,4 @@
-const SPRITE = "/assets/textures/gunman.png";
+const SPRITE = "assets/textures/gunman.png";
 const SCALE = 4;
 const FRAME_WIDTH = 32;
 
@@ -18,15 +18,15 @@ const animations = {
 };
 
 const sounds = {
-	intro: new Audio("/assets/sounds/intro.m4a"),
-	wait: new Audio("/assets/sounds/wait.m4a"),
-	shot: new Audio("/assets/sounds/shot.m4a"),
-	shot_fall: new Audio("/assets/sounds/shot_fall.m4a"),
-	fire: new Audio("/assets/sounds/fire.m4a"),
-	win: new Audio("/assets/sounds/win.m4a"),
-	foul: new Audio("/assets/sounds/foul.m4a"),
-	death: new Audio("/assets/sounds/death.m4a"),
-	tick: new Audio("/assets/sounds/tick.m4a"),
+	intro: new Audio("assets/sounds/intro.m4a"),
+	wait: new Audio("assets/sounds/wait.m4a"),
+	shot: new Audio("assets/sounds/shot.m4a"),
+	shot_fall: new Audio("assets/sounds/shot_fall.m4a"),
+	fire: new Audio("assets/sounds/fire.m4a"),
+	win: new Audio("assets/sounds/win.m4a"),
+	foul: new Audio("assets/sounds/foul.m4a"),
+	death: new Audio("assets/sounds/death.m4a"),
+	tick: new Audio("assets/sounds/tick.m4a"),
 	winPlayed: false
 };
 sounds.intro.loop = true;
@@ -112,7 +112,7 @@ let canShoot = false;
 let loseTimer = 0;
 let foulTimer = 0;
 
-let messageContent = "/assets/textures/message/foul.png";
+let messageContent = "assets/textures/message/foul.png";
 
 let hp = 3;
 let wins = 0;
@@ -390,13 +390,13 @@ function renderEnemy() {
 
 function setBackgroundImage() {
 	if (gameState === "intro") {
-		bgEl.src = "/assets/textures/bg/intro.png";
+		bgEl.src = "assets/textures/bg/intro.png";
 	} else if (gameState === "lose_hold" || gameState === "lose_exit") {
-		bgEl.src = "/assets/textures/bg/bg_death.png";
+		bgEl.src = "assets/textures/bg/bg_death.png";
 	} else if (gameState === "foul_hold" || gameState === "foul_exit") {
-		bgEl.src = "/assets/textures/bg/bg_foul.png";
+		bgEl.src = "assets/textures/bg/bg_foul.png";
 	} else {
-		bgEl.src = "/assets/textures/bg/bg.png";
+		bgEl.src = "assets/textures/bg/bg.png";
 	}
 }
 
