@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab_7</title>
+    <script type="module" crossorigin src="/назва-репо/assets/index-DbIuGi2a.js"></script>
+    <link rel="stylesheet" crossorigin href="/назва-репо/assets/index-CMdH2Rbw.css">
+  </head>
+  <body>
+    <div class="ui-panel">
+      <div class="time-block">
+        <div class="ui-block">
+          <div class="label">ENEMY</div>
+          <div id="enemy-time">0.00</div>
+        </div>
+        <div class="ui-block">
+          <div class="label">YOU</div>
+          <div id="player-time">0.00</div>
+        </div>
+      </div>
+      <div class="data-block">
+        <div class="score-block">
+          <div id="score">000000</div>
+          <div class="label label--score">SCORE</div>
+        </div>
+        <div class="stats-block">
+          <div class="stats-row">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAHCAYAAADTcMcaAAAAAXNSR0IArs4c6QAAADhJREFUGJVjYPoPgQxIAJsYijwuCXwARRM+05EBIz6F/xj/MWITZyHaSUiGozgPl8kYBqBrIEYjAHaPFhQqTc44AAAAAElFTkSuQmCC" class="win" />
+            <div id="win">0</div>
+          </div>
+          <div class="stats-row">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAHCAYAAADTcMcaAAAAAXNSR0IArs4c6QAAAE5JREFUGJWdjkkOwDAMAgH3/z+O6SF1pWaRouKbxQDAD1GWx2cyKcvJ5BKy/YEC8YJHtRUg99vOW4GBQEPrBpIVVJ5rSnlMMLZNOto96AYRUyAOwfdQngAAAABJRU5ErkJggg==" class="hp" />
+            <div id="hp">3</div>
+          </div>
+        </div>
+      </div>
+      <div class="reward-block">
+        <div class="reward-row">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAOCAYAAADjXQYbAAAAAXNSR0IArs4c6QAAAEdJREFUGJV9kMEOACAIQnn+/z/bpZyzyAubwEClPZmZHSWJuSgCuBwdYzr6WBIgXKYtBFCkE8TL8W17ROHKSJ9TbNuZ/3z8AqbWO/MHPYwDAAAAAElFTkSuQmCC" class="coin" />
+          <div id="coin">2800</div>
+        </div>
+        <div class="label label--reward">REWARD</div>
+      </div>
+    </div>
+    <div class="game">
+      <img id="bg" src="data:image/png;base64,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" class="bg" />
+      <div id="message-box">
+        <img
+          id="message"
+          class="hidden"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAgCAYAAACFM/9sAAAAAXNSR0IArs4c6QAAAQdJREFUaIHtmcsSwyAIRSXT//9luikZqvjE2I7es0pwEs0VBQwFA2Zmy34qRETZNn0D4cpYQt4GiNdGLCKFAPF60SJevxzIDhC8bwzxwteizhKbzFtLm55jbbParb71+2b7yxIBhXjwOYFmfaienEIm4gJ7oJOrlCTORrxrJdqTZy3fJAqvEpGZp+9Btf6saw+xVtfn5dtF4qf2v1irJWlMKVqWonCtvfbsk4gnIg8cRAREFHYCAZ3gMGEAHCZMBOeBnZjngQJEzJMrNhIjRExp/icSc7qYLSXu2sr+T0nKs47a73gBc6usVUSkMU6O98AQfEsYOIHS4dsDe70PeyAY5/Q8F+zAG24/iDGeHbRdAAAAAElFTkSuQmCC"
+          alt="message"
+        />
+      </div>
+      <div class="bonus hidden">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAgCAYAAADtwH1UAAAAAXNSR0IArs4c6QAAAP1JREFUaIHt2dsOgyAQBNAd4v//8vSlayjSQrWySuckTaxoaXZBLsIqSLJ2Xo4BgM25/IsCP0aeiPVAwR/LkwAzBT8KAKToP/HvoNYfSz0g2NK6oDJzMjOzvOPUrvFyL6tdT7K7/F3dd9dMgCsDBOBjAL08P3ckcDMFPZdqi4OzDKzqFgBg8YPWYFwGb2+L3JuE/L4ZeoM3/GTWtw4guX6eP/BVhXuDVtY7C495GjkNnS2IR5Fk9yD87hHkA3HvI6qc2bTun33c0EIsmBZiwbQZF0ibcReg9wFBXt4HOCXhfOXOw2aOpyScp/lOuKRk/MbI/TYRERERERGRa3sAgBCXEsiM/1IAAAAASUVORK5CYII=" alt="bonus">
+        <div id="bonus">0</div>
+      </div>
+      <div id="enemy" class="enemy"></div>
+      <div id="hat" class="hidden"></div>
+    </div>
+
+  </body>
+</html>
