@@ -1,38 +1,29 @@
+/* ====== Reset & Base ====== */
 body {
   margin: 0;
   padding-right: 5%;
   background: black;
-
   user-select: none;
-
   display: flex;
   justify-content: right;
   align-items: center;
-
   height: 100vh;
 }
 
+/* ====== Font ====== */
+@font-face {
+  font-family: "Pixel";
+  src: url("/assets/fonts/PixeloidSans-Bold.ttf") format("truetype");
+}
+
+/* ====== Game ====== */
 .game {
   position: absolute;
   overflow: hidden;
-
   width: 264px;
   height: 134px;
-
   transform: scale(4);
   transform-origin: right;
-
-  image-rendering: pixelated;
-}
-
-.enemy {
-  position: absolute;
-  left: 50%;
-  bottom: 30px;
-
-  transform: translateX(-50%);
-
-  background-repeat: no-repeat;
   image-rendering: pixelated;
 }
 
@@ -42,116 +33,24 @@ body {
   image-rendering: pixelated;
 }
 
-@font-face {
-  font-family: "Pixel";
-  src: url("/assets/fonts/PixeloidSans-Bold.ttf") format("truetype");
-}
-
-.ui-panel {
+.enemy {
   position: absolute;
-  left: 1%;
-  top: 12%;
-  bottom: 12%;
-  width: 360px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-
-  font-family: "Pixel", monospace;
-  font-size: 36px;
-  color: white;
-}
-
-.time-block {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.ui-block {
-  width: 93%;
-  padding: 10px;
-  border: solid 2px #02ff02;
-  border-radius: 10px;
-}
-
-.ui-panel .label {
-  font-size: 30px;
-  color: #02ff02;
-}
-
-#enemy-time,
-#player-time {
-  font-size: 40px;
-}
-
-.data-block {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-}
-
-.ui-panel img {
-  transform: scale(4);
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
   image-rendering: pixelated;
 }
 
-.label--score {
-  display: block;
-  width: 6ch;
-  text-align: center;
-
-  letter-spacing: 13px;
+#hat {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  background-size: 468px 365px;
 }
 
-.label--reward {
-  display: block;
-  width: 6ch; 
-  text-align: center;
-
-  letter-spacing: 5px;
-}
-
-.stats-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.stats-row {
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-
-  width: fit-content;
-  align-items: center; 
-}
-
-.reward-block {
-  display: flex;
-  flex-direction: column;
-}
-
-.reward-row {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-
-  padding: 11px;
-
-  width: fit-content;
-  align-items: center; 
-}
-
-#coin { 
-  display: inline-block;
-  font-size: 40px;
-  transform: scaleY(1.8);
-}
-
+/* ====== Messages ====== */
 #message-box {
   position: absolute;
   left: 95px;
@@ -164,12 +63,12 @@ body {
   top: 10px;
 }
 
-#bonus {
-  font-family: "Pixel", monospace;
-  font-size: 9px;
+#bonus-score {
   position: absolute;
   top: 5px;
   left: 55px;
+  font-family: "Pixel", monospace;
+  font-size: 9px;
   transition: all 0.2s ease;
 }
 
@@ -177,11 +76,102 @@ body {
   display: none;
 }
 
-#hat {
-    position: absolute;
-    image-rendering: pixelated;
-    width: 32px;
-    height: 32px;
-    background-image: url("/src/assets/textures/gunman.png");
-    background-size: 468px 365px;
+/* ====== UI Panel ====== */
+.ui-panel {
+  position: absolute;
+  left: 1%;
+  top: 12%;
+  bottom: 12%;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: "Pixel", monospace;
+  font-size: 36px;
+  color: white;
+}
+
+.ui-panel img {
+  transform: scale(4);
+  image-rendering: pixelated;
+}
+
+.ui-panel .label {
+  font-size: 30px;
+  color: #02ff02;
+}
+
+.ui-block {
+  width: 93%;
+  padding: 10px;
+  border: 2px solid #02ff02;
+  border-radius: 10px;
+}
+
+/* ====== Time Block ====== */
+.time-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#enemy-time,
+#player-time {
+  font-size: 40px;
+}
+
+/* ====== Data Block ====== */
+.data-block {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+}
+
+.label--score {
+  display: block;
+  width: 6ch;
+  text-align: center;
+  letter-spacing: 13px;
+}
+
+.stats-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stats-row {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: fit-content;
+}
+
+/* ====== Reward Block ====== */
+.reward-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.reward-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 11px;
+  width: fit-content;
+}
+
+.label--reward {
+  display: block;
+  width: 6ch;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+#coin {
+  display: inline-block;
+  font-size: 40px;
+  transform: scaleY(1.8);
 }
